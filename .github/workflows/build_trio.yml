@@ -195,7 +195,7 @@ jobs:
           fi
 
           # Checkout a different branch for the OmniBLE submodule
-          cd OmniBLE && git fetch && git checkout pod-keep-alive && cd ..
+          cd OmniBLE && git fetch origin && git checkout --track origin/pod-keep-alive && cd ..
 
           # Download and apply Trio patches from GitHub:
           # Template for customizing Trio code (as opposed to submodule code)
