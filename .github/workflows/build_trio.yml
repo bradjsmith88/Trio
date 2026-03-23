@@ -214,6 +214,11 @@ jobs:
           # Several patches may be added per submodule.
           # Adding comments (#) is strongly recommended to easily tell the individual patches apart.
 
+          # use OmniBLE pod-keep-alive branch
+          cd OmniBLE
+          git switch pod-keep-alive
+          cd ..
+
       # Patch Fastlane Match to not print tables
       - name: Patch Match Tables
         run: |
