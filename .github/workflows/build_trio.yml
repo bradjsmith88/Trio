@@ -194,6 +194,9 @@ jobs:
           git apply ./patches/* --allow-empty -v --whitespace=fix
           fi
 
+          # Checkout a different branch for the OmniBLE submodule
+          cd OmniBLE && git fetch && git checkout pod-keep-alive && cd ..
+
           # Download and apply Trio patches from GitHub:
           # Template for customizing Trio code (as opposed to submodule code)
           # Remove the "#" sign from the beginning of the line below to activate
@@ -213,11 +216,6 @@ jobs:
           # and make sure to specify the submodule by setting "--directory=(submodule_name)".
           # Several patches may be added per submodule.
           # Adding comments (#) is strongly recommended to easily tell the individual patches apart.
-
-          # use OmniBLE pod-keep-alive branch
-          cd OmniBLE
-          git checkout pod-keep-alive
-          cd ..
 
       # Patch Fastlane Match to not print tables
       - name: Patch Match Tables
