@@ -216,7 +216,7 @@ jobs:
 
           # use OmniBLE pod-keep-alive branch
           cd OmniBLE
-          git switch pod-keep-alive
+          git checkout pod-keep-alive
           cd ..
 
       # Patch Fastlane Match to not print tables
